@@ -3,39 +3,12 @@ import { ArrowRight } from "lucide-react";
 const ReactorLogo = () => (
   <div className="flex items-center justify-center mb-8">
     <div className="flex items-center gap-4">
-      {/* Reactor logo - exact recreation from provided images */}
-      <div className="relative flex items-center justify-center w-16 h-16">
-        {/* Central yellow circle */}
-        <div className="absolute w-6 h-6 bg-[#FFCC00] rounded-full z-30"></div>
-        
-        {/* Orange/red ring around center */}
-        <div className="absolute w-10 h-10 border-2 border-[#E87B00] rounded-full z-20"></div>
-        
-        {/* Four outer circles with connecting lines */}
-        {/* Top */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1">
-          <div className="w-3 h-3 bg-[#E87B00] rounded-full"></div>
-        </div>
-        <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-0.5 h-3 bg-[#E87B00] z-10"></div>
-        
-        {/* Right */}
-        <div className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-1">
-          <div className="w-3 h-3 bg-[#E87B00] rounded-full"></div>
-        </div>
-        <div className="absolute top-1/2 right-2 transform -translate-y-1/2 w-3 h-0.5 bg-[#E87B00] z-10"></div>
-        
-        {/* Bottom */}
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1">
-          <div className="w-3 h-3 bg-[#E87B00] rounded-full"></div>
-        </div>
-        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-0.5 h-3 bg-[#E87B00] z-10"></div>
-        
-        {/* Left */}
-        <div className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-1">
-          <div className="w-3 h-3 bg-[#E87B00] rounded-full"></div>
-        </div>
-        <div className="absolute top-1/2 left-2 transform -translate-y-1/2 w-3 h-0.5 bg-[#E87B00] z-10"></div>
-      </div>
+      {/* Using the actual uploaded logo image */}
+      <img 
+        src="/lovable-uploads/3c2b7c84-4fb4-4ed8-a1e8-a7d5e6f8c9d0.png" 
+        alt="Reactor Logo" 
+        className="w-16 h-16"
+      />
       <h2 className="text-2xl font-bold text-[#2C3E50] ml-2">REACTOR</h2>
     </div>
   </div>
