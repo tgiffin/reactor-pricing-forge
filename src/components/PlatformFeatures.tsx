@@ -54,7 +54,7 @@ const PlatformFeatures = () => {
       description: "Retransform source data using updated mappings without reingesting raw data."
     },
     {
-      icon: TestTube,
+      icon: "sandbox-logo", // Special identifier for sandbox logo
       title: "Sandbox Mode",
       description: "Build, test, and validate mapping changes in an isolated environment before deployment."
     },
@@ -190,6 +190,20 @@ const PlatformFeatures = () => {
                           }
                         }}
                       />
+                    ) : feature.icon === "sandbox-logo" ? (
+                      <img 
+                        src="/lovable-uploads/461de090-e2c8-42fe-9922-677f351efc1a.png" 
+                        alt="Sandbox Logo" 
+                        className="w-6 h-6 object-contain"
+                        onError={(e) => {
+                          console.log('Sandbox logo failed to load, falling back to TestTube icon');
+                          e.currentTarget.style.display = 'none';
+                          const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                          if (nextElement) {
+                            nextElement.style.display = 'block';
+                          }
+                        }}
+                      />
                     ) : feature.icon === "destinations-logo" ? (
                       <img 
                         src="/lovable-uploads/b061c278-08d2-476d-a88b-790cc9a6588f.png" 
@@ -251,6 +265,13 @@ const PlatformFeatures = () => {
                     )}
                     {feature.icon === "mapper-replay-logo" && (
                       <RotateCcw 
+                        size={24} 
+                        className="text-[#2462AA]" 
+                        style={{ display: 'none' }}
+                      />
+                    )}
+                    {feature.icon === "sandbox-logo" && (
+                      <TestTube 
                         size={24} 
                         className="text-[#2462AA]" 
                         style={{ display: 'none' }}
