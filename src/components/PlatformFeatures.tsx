@@ -1,3 +1,4 @@
+
 import React from "react";
 import { 
   Database, 
@@ -178,7 +179,7 @@ const PlatformFeatures = () => {
                       />
                     ) : feature.icon === "mapper-replay-logo" ? (
                       <img 
-                        src="/lovable-uploads/76d76145-d775-4e09-b028-6b4d4d753884.png" 
+                        src="/lovable-uploads/6c5770f7-a0b4-4491-a532-e6733e60d1a9.png" 
                         alt="Mapper Replay Logo" 
                         className="w-6 h-6 object-contain"
                         onError={(e) => {
