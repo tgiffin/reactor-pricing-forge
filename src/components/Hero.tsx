@@ -3,60 +3,38 @@ import { ArrowRight } from "lucide-react";
 const ReactorLogo = () => (
   <div className="flex items-center justify-center mb-8">
     <div className="flex items-center gap-4">
-      {/* Reactor logo - recreating the design from style guide */}
-      <div className="relative flex items-center justify-center w-20 h-20">
+      {/* Reactor logo - exact recreation from provided images */}
+      <div className="relative flex items-center justify-center w-16 h-16">
         {/* Central yellow circle */}
-        <div className="absolute w-6 h-6 bg-[#FFCC00] rounded-full z-20"></div>
+        <div className="absolute w-6 h-6 bg-[#FFCC00] rounded-full z-30"></div>
         
-        {/* Orange outer circles positioned correctly */}
-        {/* Top circle */}
-        <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-[#E87B00] rounded-full z-10"></div>
+        {/* Orange/red ring around center */}
+        <div className="absolute w-10 h-10 border-2 border-[#E87B00] rounded-full z-20"></div>
         
-        {/* Top-right circle */}
-        <div className="absolute top-2 right-2 w-3 h-3 bg-[#E87B00] rounded-full z-10"></div>
+        {/* Four outer circles with connecting lines */}
+        {/* Top */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1">
+          <div className="w-3 h-3 bg-[#E87B00] rounded-full"></div>
+        </div>
+        <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-0.5 h-3 bg-[#E87B00] z-10"></div>
         
-        {/* Right circle */}
-        <div className="absolute top-1/2 right-1 transform -translate-y-1/2 w-3 h-3 bg-[#E87B00] rounded-full z-10"></div>
+        {/* Right */}
+        <div className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-1">
+          <div className="w-3 h-3 bg-[#E87B00] rounded-full"></div>
+        </div>
+        <div className="absolute top-1/2 right-2 transform -translate-y-1/2 w-3 h-0.5 bg-[#E87B00] z-10"></div>
         
-        {/* Bottom-right circle */}
-        <div className="absolute bottom-2 right-2 w-3 h-3 bg-[#E87B00] rounded-full z-10"></div>
+        {/* Bottom */}
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1">
+          <div className="w-3 h-3 bg-[#E87B00] rounded-full"></div>
+        </div>
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-0.5 h-3 bg-[#E87B00] z-10"></div>
         
-        {/* Bottom circle */}
-        <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-[#E87B00] rounded-full z-10"></div>
-        
-        {/* Bottom-left circle */}
-        <div className="absolute bottom-2 left-2 w-3 h-3 bg-[#E87B00] rounded-full z-10"></div>
-        
-        {/* Left circle */}
-        <div className="absolute top-1/2 left-1 transform -translate-y-1/2 w-3 h-3 bg-[#E87B00] rounded-full z-10"></div>
-        
-        {/* Top-left circle */}
-        <div className="absolute top-2 left-2 w-3 h-3 bg-[#E87B00] rounded-full z-10"></div>
-        
-        {/* Connecting lines from center to outer circles */}
-        {/* Top line */}
-        <div className="absolute top-3 left-1/2 transform -translate-x-1/2 w-0.5 h-3 bg-[#E87B00] z-0"></div>
-        
-        {/* Top-right line */}
-        <div className="absolute top-4 right-4 w-3 h-0.5 bg-[#E87B00] transform rotate-45 origin-left z-0"></div>
-        
-        {/* Right line */}
-        <div className="absolute top-1/2 right-3 transform -translate-y-1/2 w-3 h-0.5 bg-[#E87B00] z-0"></div>
-        
-        {/* Bottom-right line */}
-        <div className="absolute bottom-4 right-4 w-3 h-0.5 bg-[#E87B00] transform -rotate-45 origin-left z-0"></div>
-        
-        {/* Bottom line */}
-        <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-0.5 h-3 bg-[#E87B00] z-0"></div>
-        
-        {/* Bottom-left line */}
-        <div className="absolute bottom-4 left-4 w-3 h-0.5 bg-[#E87B00] transform rotate-45 origin-left z-0"></div>
-        
-        {/* Left line */}
-        <div className="absolute top-1/2 left-3 transform -translate-y-1/2 w-3 h-0.5 bg-[#E87B00] z-0"></div>
-        
-        {/* Top-left line */}
-        <div className="absolute top-4 left-4 w-3 h-0.5 bg-[#E87B00] transform -rotate-45 origin-left z-0"></div>
+        {/* Left */}
+        <div className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-1">
+          <div className="w-3 h-3 bg-[#E87B00] rounded-full"></div>
+        </div>
+        <div className="absolute top-1/2 left-2 transform -translate-y-1/2 w-3 h-0.5 bg-[#E87B00] z-10"></div>
       </div>
       <h2 className="text-2xl font-bold text-[#2C3E50] ml-2">REACTOR</h2>
     </div>
