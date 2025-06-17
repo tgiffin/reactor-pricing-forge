@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import { 
   Database, 
@@ -99,7 +97,6 @@ const PlatformFeatures = () => {
                         src="/lovable-uploads/cbcd9c7e-27d8-4a1b-b7a7-bd8a4efdc1c6.png" 
                         alt="Source Links Logo" 
                         className="w-6 h-6 object-contain"
-                        style={{ filter: 'brightness(0) saturate(100%) invert(21%) sepia(77%) saturate(1572%) hue-rotate(206deg) brightness(93%) contrast(90%)' }}
                         onError={(e) => {
                           console.log('Source Links logo failed to load, falling back to Link icon');
                           e.currentTarget.style.display = 'none';
@@ -152,4 +149,3 @@ const PlatformFeatures = () => {
 };
 
 export default PlatformFeatures;
-
