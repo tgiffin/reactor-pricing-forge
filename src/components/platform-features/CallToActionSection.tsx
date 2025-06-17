@@ -15,9 +15,14 @@ const CallToActionSection = () => {
           <button className="bg-white text-[#2462AA] hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
             Start Free Trial
           </button>
-          <button className="border-2 border-white text-white hover:bg-white hover:text-[#2462AA] px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+          <a 
+            href="https://reactordata.com/get-reactor/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="border-2 border-white text-white hover:bg-white hover:text-[#2462AA] px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 inline-block"
+          >
             Schedule Demo
-          </button>
+          </a>
         </div>
       </div>
     </div>

@@ -15,7 +15,8 @@ const PricingCards = () => {
       ],
       cta: "Get Started",
       ctaStyle: "bg-[#2462AA] hover:bg-[#1a4d88] text-white",
-      popular: false
+      popular: false,
+      isLink: false
     },
     {
       name: "Pro",
@@ -29,7 +30,8 @@ const PricingCards = () => {
       ],
       cta: "Talk to Sales",
       ctaStyle: "bg-slate-900 hover:bg-slate-800 text-white",
-      popular: true
+      popular: true,
+      isLink: false
     },
     {
       name: "Enterprise",
@@ -44,7 +46,9 @@ const PricingCards = () => {
       ],
       cta: "Request Demo",
       ctaStyle: "bg-[#E87B00] hover:bg-[#d16900] text-white",
-      popular: false
+      popular: false,
+      isLink: true,
+      url: "https://reactordata.com/get-reactor/"
     }
   ];
 
@@ -97,10 +101,22 @@ const PricingCards = () => {
                 ))}
               </ul>
               
-              <button className={`w-full py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center gap-2 ${tier.ctaStyle}`}>
-                {tier.cta}
-                <ArrowRight size={20} />
-              </button>
+              {tier.isLink ? (
+                <a 
+                  href={tier.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-full py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center gap-2 ${tier.ctaStyle}`}
+                >
+                  {tier.cta}
+                  <ArrowRight size={20} />
+                </a>
+              ) : (
+                <button className={`w-full py-4 px-6 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center gap-2 ${tier.ctaStyle}`}>
+                  {tier.cta}
+                  <ArrowRight size={20} />
+                </button>
+              )}
             </div>
           ))}
         </div>
@@ -108,7 +124,7 @@ const PricingCards = () => {
         <div className="text-center mt-12">
           <p className="text-slate-600">
             All plans include our comprehensive data integration platform. 
-            <span className="block mt-2">Need a custom solution? <a href="#" className="text-[#2462AA] hover:text-[#1a4d88] font-semibold">Contact our sales team</a></span>
+            <span className="block mt-2">Need a custom solution? <a href="https://reactordata.com/get-reactor/" target="_blank" rel="noopener noreferrer" className="text-[#2462AA] hover:text-[#1a4d88] font-semibold">Contact our sales team</a></span>
           </p>
         </div>
       </div>
