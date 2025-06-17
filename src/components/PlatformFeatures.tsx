@@ -18,9 +18,16 @@ const PlatformFeatures = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature) => (
+          {features.slice(0, 9).map((feature) => (
             <FeatureCard key={feature.title} feature={feature} />
           ))}
+        </div>
+        
+        {/* Center the last card */}
+        <div className="flex justify-center mt-8">
+          <div className="w-full max-w-sm lg:max-w-md">
+            <FeatureCard feature={features[9]} />
+          </div>
         </div>
         
         <CallToActionSection />
