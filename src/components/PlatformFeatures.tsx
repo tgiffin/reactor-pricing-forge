@@ -1,4 +1,3 @@
-
 import React from "react";
 import { 
   Database, 
@@ -123,7 +122,7 @@ const PlatformFeatures = () => {
                       />
                     ) : feature.icon === "mappings-logo" ? (
                       <img 
-                        src="/lovable-uploads/16c874e9-eed6-4afd-8772-4134800d6a78.png" 
+                        src="/lovable-uploads/96b70841-8b24-454c-846c-5994e44c6680.png" 
                         alt="Mappings Logo" 
                         className="w-6 h-6 object-contain"
                         onError={(e) => {
