@@ -1,20 +1,33 @@
-
 import { ArrowRight } from "lucide-react";
 
 const ReactorLogo = () => (
   <div className="flex items-center justify-center mb-8">
-    <div className="flex items-center gap-3">
-      {/* Reactor logo design with connected circles */}
-      <div className="relative flex items-center">
-        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-        <div className="w-1 h-0.5 bg-red-500 mx-1"></div>
-        <div className="w-6 h-6 bg-yellow-400 rounded-full border-4 border-yellow-400 relative">
-          <div className="absolute inset-1 bg-white rounded-full"></div>
+    <div className="flex items-center gap-4">
+      {/* Correct Reactor logo design based on style guide */}
+      <div className="relative flex items-center justify-center w-16 h-16">
+        {/* Central yellow circle */}
+        <div className="absolute w-8 h-8 bg-[#FFCC00] rounded-full z-10"></div>
+        
+        {/* Orange connecting lines and circles */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2">
+          <div className="w-4 h-4 bg-[#E87B00] rounded-full"></div>
+          <div className="w-1 h-4 bg-[#E87B00] mx-auto"></div>
         </div>
-        <div className="w-1 h-0.5 bg-orange-500 mx-1"></div>
-        <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+        
+        <div className="absolute bottom-0 right-0 transform translate-x-2 translate-y-2">
+          <div className="w-1 h-4 bg-[#E87B00] rotate-45 origin-top"></div>
+          <div className="w-4 h-4 bg-[#E87B00] rounded-full"></div>
+        </div>
+        
+        <div className="absolute top-1/2 left-0 transform -translate-x-2 -translate-y-1/2">
+          <div className="w-4 h-4 bg-[#E87B00] rounded-full"></div>
+          <div className="w-4 h-1 bg-[#E87B00]"></div>
+        </div>
+        
+        {/* Orange ring around center */}
+        <div className="absolute w-12 h-12 border-4 border-[#E87B00] rounded-full"></div>
       </div>
-      <h2 className="text-2xl font-bold text-slate-900 ml-4">REACTOR</h2>
+      <h2 className="text-2xl font-bold text-[#2C3E50] ml-2">REACTOR</h2>
     </div>
   </div>
 );
@@ -45,7 +58,6 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Decorative elements using brand colors */}
       <div className="absolute top-10 left-10 w-20 h-20 bg-[#FFCC00] opacity-20 rounded-full blur-xl"></div>
       <div className="absolute bottom-10 right-10 w-32 h-32 bg-[#2462AA] opacity-20 rounded-full blur-2xl"></div>
     </section>
