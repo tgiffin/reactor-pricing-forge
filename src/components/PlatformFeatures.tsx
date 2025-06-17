@@ -30,7 +30,7 @@ const PlatformFeatures = () => {
       description: "Combine data from multiple sources into a unified structure for analysis."
     },
     {
-      icon: Bot,
+      icon: "electron-logo", // Special identifier for electron logo
       title: "Electron AI",
       description: "Built-in AI assistant for managing mappings, pipeline tasks, and data logic using natural language."
     },
@@ -121,6 +121,20 @@ const PlatformFeatures = () => {
                           }
                         }}
                       />
+                    ) : feature.icon === "electron-logo" ? (
+                      <img 
+                        src="/lovable-uploads/aacd8936-4766-436b-9ecc-581c9e6f43e6.png" 
+                        alt="Electron AI Logo" 
+                        className="w-6 h-6 object-contain"
+                        onError={(e) => {
+                          console.log('Electron AI logo failed to load, falling back to Bot icon');
+                          e.currentTarget.style.display = 'none';
+                          const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                          if (nextElement) {
+                            nextElement.style.display = 'block';
+                          }
+                        }}
+                      />
                     ) : feature.icon === "mappings-logo" ? (
                       <img 
                         src="/lovable-uploads/96b70841-8b24-454c-846c-5994e44c6680.png" 
@@ -161,6 +175,13 @@ const PlatformFeatures = () => {
                     )}
                     {feature.icon === "source-links-logo" && (
                       <Link 
+                        size={24} 
+                        className="text-[#2462AA]" 
+                        style={{ display: 'none' }}
+                      />
+                    )}
+                    {feature.icon === "electron-logo" && (
+                      <Bot 
                         size={24} 
                         className="text-[#2462AA]" 
                         style={{ display: 'none' }}
