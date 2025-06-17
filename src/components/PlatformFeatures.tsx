@@ -1,6 +1,4 @@
-
 import { 
-  Monitor, 
   Database, 
   Link, 
   Bot, 
@@ -15,7 +13,7 @@ import {
 const PlatformFeatures = () => {
   const features = [
     {
-      icon: Monitor,
+      icon: "custom-logo", // Special identifier for custom logo
       title: "Data Monitoring",
       description: "Monitor the health and status of all data source connections in one central location."
     },
@@ -80,15 +78,22 @@ const PlatformFeatures = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => {
-            const IconComponent = feature.icon;
             return (
               <div
                 key={feature.title}
                 className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-slate-200"
               >
                 <div className="flex items-center mb-4">
-                  <div className="bg-[#2462AA]/10 p-3 rounded-lg mr-4">
-                    <IconComponent size={24} className="text-[#2462AA]" />
+                  <div className="bg-[#2462AA]/10 p-3 rounded-lg mr-4 flex items-center justify-center">
+                    {feature.icon === "custom-logo" ? (
+                      <img 
+                        src="/lovable-uploads/d483e6f4-63ea-4cef-a784-88543898b1d4.png" 
+                        alt="Data Monitor Logo" 
+                        className="w-6 h-6 object-contain"
+                      />
+                    ) : (
+                      React.createElement(feature.icon, { size: 24, className: "text-[#2462AA]" })
+                    )}
                   </div>
                   <h3 className="text-xl font-semibold text-slate-900">{feature.title}</h3>
                 </div>
