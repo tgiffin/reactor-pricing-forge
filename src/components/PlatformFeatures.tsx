@@ -45,7 +45,7 @@ const PlatformFeatures = () => {
       description: "Includes functions and helpers for logic, math, structure, text, dates, and statistics."
     },
     {
-      icon: Layers,
+      icon: "semantic-layer-logo", // Special identifier for semantic layer logo
       title: "Semantic Layer and Models",
       description: "Build and maintain reusable, consistent data models for business clarity and governance."
     },
@@ -163,6 +163,20 @@ const PlatformFeatures = () => {
                           }
                         }}
                       />
+                    ) : feature.icon === "semantic-layer-logo" ? (
+                      <img 
+                        src="/lovable-uploads/60915d00-c0ad-4bc0-bb22-f9e8c53494f3.png" 
+                        alt="Semantic Layer Logo" 
+                        className="w-6 h-6 object-contain"
+                        onError={(e) => {
+                          console.log('Semantic Layer logo failed to load, falling back to Layers icon');
+                          e.currentTarget.style.display = 'none';
+                          const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                          if (nextElement) {
+                            nextElement.style.display = 'block';
+                          }
+                        }}
+                      />
                     ) : feature.icon === "destinations-logo" ? (
                       <img 
                         src="/lovable-uploads/b061c278-08d2-476d-a88b-790cc9a6588f.png" 
@@ -210,6 +224,13 @@ const PlatformFeatures = () => {
                     )}
                     {feature.icon === "expression-library-logo" && (
                       <Code 
+                        size={24} 
+                        className="text-[#2462AA]" 
+                        style={{ display: 'none' }}
+                      />
+                    )}
+                    {feature.icon === "semantic-layer-logo" && (
+                      <Layers 
                         size={24} 
                         className="text-[#2462AA]" 
                         style={{ display: 'none' }}
