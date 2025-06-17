@@ -32,7 +32,8 @@ const PricingCards = () => {
       cta: "Talk to Sales",
       ctaStyle: "bg-slate-900 hover:bg-slate-800 text-white",
       popular: true,
-      isLink: false
+      isLink: true,
+      url: "https://reactordata.com/contact/"
     },
     {
       name: "Enterprise",
