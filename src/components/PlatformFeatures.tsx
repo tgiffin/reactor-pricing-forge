@@ -1,3 +1,4 @@
+
 import React from "react";
 import { 
   Database, 
@@ -100,7 +101,10 @@ const PlatformFeatures = () => {
                         onError={(e) => {
                           console.log('Source Links logo failed to load, falling back to Link icon');
                           e.currentTarget.style.display = 'none';
-                          e.currentTarget.nextSibling.style.display = 'block';
+                          const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                          if (nextElement) {
+                            nextElement.style.display = 'block';
+                          }
                         }}
                       />
                     ) : (
