@@ -1,3 +1,4 @@
+
 import React from "react";
 import { 
   Database, 
@@ -34,7 +35,7 @@ const PlatformFeatures = () => {
       description: "Built-in AI assistant for managing mappings, pipeline tasks, and data logic using natural language."
     },
     {
-      icon: Settings,
+      icon: "mappings-logo", // Special identifier for mappings logo
       title: "Mappings",
       description: "Configure and control how your data is transformed and routed to destinations."
     },
@@ -120,6 +121,20 @@ const PlatformFeatures = () => {
                           }
                         }}
                       />
+                    ) : feature.icon === "mappings-logo" ? (
+                      <img 
+                        src="/lovable-uploads/16c874e9-eed6-4afd-8772-4134800d6a78.png" 
+                        alt="Mappings Logo" 
+                        className="w-6 h-6 object-contain"
+                        onError={(e) => {
+                          console.log('Mappings logo failed to load, falling back to Settings icon');
+                          e.currentTarget.style.display = 'none';
+                          const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                          if (nextElement) {
+                            nextElement.style.display = 'block';
+                          }
+                        }}
+                      />
                     ) : (
                       React.createElement(feature.icon, { size: 24, className: "text-[#2462AA]" })
                     )}
@@ -132,6 +147,13 @@ const PlatformFeatures = () => {
                     )}
                     {feature.icon === "source-links-logo" && (
                       <Link 
+                        size={24} 
+                        className="text-[#2462AA]" 
+                        style={{ display: 'none' }}
+                      />
+                    )}
+                    {feature.icon === "mappings-logo" && (
+                      <Settings 
                         size={24} 
                         className="text-[#2462AA]" 
                         style={{ display: 'none' }}
