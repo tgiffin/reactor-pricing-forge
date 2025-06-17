@@ -1,0 +1,124 @@
+
+import { 
+  Monitor, 
+  Database, 
+  Link, 
+  Bot, 
+  Settings, 
+  Code, 
+  Layers, 
+  RotateCcw, 
+  TestTube, 
+  Target 
+} from "lucide-react";
+
+const PlatformFeatures = () => {
+  const features = [
+    {
+      icon: Monitor,
+      title: "Data Monitoring",
+      description: "Monitor the health and status of all data source connections in one central location."
+    },
+    {
+      icon: Database,
+      title: "Sources",
+      description: "Use a library of 500+ connectors to ingest and integrate your data."
+    },
+    {
+      icon: Link,
+      title: "Source Linking",
+      description: "Combine data from multiple sources into a unified structure for analysis."
+    },
+    {
+      icon: Bot,
+      title: "Electron AI",
+      description: "Built-in AI assistant for managing mappings, pipeline tasks, and data logic using natural language."
+    },
+    {
+      icon: Settings,
+      title: "Mappings",
+      description: "Configure and control how your data is transformed and routed to destinations."
+    },
+    {
+      icon: Code,
+      title: "Mapping Expression Library",
+      description: "Includes functions and helpers for logic, math, structure, text, dates, and statistics."
+    },
+    {
+      icon: Layers,
+      title: "Semantic Layer and Models",
+      description: "Build and maintain reusable, consistent data models for business clarity and governance."
+    },
+    {
+      icon: RotateCcw,
+      title: "Mapper Replay",
+      description: "Retransform source data using updated mappings without reingesting raw data."
+    },
+    {
+      icon: TestTube,
+      title: "Sandbox Mode",
+      description: "Build, test, and validate mapping changes in an isolated environment before deployment."
+    },
+    {
+      icon: Target,
+      title: "Destinations",
+      description: "Output data to Snowflake, BigQuery, Databricks, S3, and Google Cloud Storage."
+    }
+  ];
+
+  return (
+    <section className="py-20 px-4 bg-slate-50" id="features">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Platform Features
+          </h2>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            Everything you need to build, manage, and scale your data infrastructure
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => {
+            const IconComponent = feature.icon;
+            return (
+              <div
+                key={feature.title}
+                className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-slate-200"
+              >
+                <div className="flex items-center mb-4">
+                  <div className="bg-blue-100 p-3 rounded-lg mr-4">
+                    <IconComponent size={24} className="text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-slate-900">{feature.title}</h3>
+                </div>
+                <p className="text-slate-600 leading-relaxed">{feature.description}</p>
+              </div>
+            );
+          })}
+        </div>
+        
+        <div className="text-center mt-16">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              Ready to Transform Your Data Pipeline?
+            </h3>
+            <p className="text-xl mb-6 opacity-90">
+              Join thousands of companies already using Reactor Data to power their analytics
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                Start Free Trial
+              </button>
+              <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                Schedule Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PlatformFeatures;
