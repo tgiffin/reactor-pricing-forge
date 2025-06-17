@@ -19,7 +19,7 @@ const PlatformFeatures = () => {
       description: "Monitor the health and status of all data source connections in one central location."
     },
     {
-      icon: Database,
+      icon: "sources-logo", // Special identifier for sources logo
       title: "Sources",
       description: "Use a library of 500+ connectors to ingest and integrate your data."
     },
@@ -92,6 +92,20 @@ const PlatformFeatures = () => {
                         alt="Data Monitor Logo" 
                         className="w-6 h-6 object-contain"
                       />
+                    ) : feature.icon === "sources-logo" ? (
+                      <img 
+                        src="/lovable-uploads/5662352e-10f2-4576-a360-0823df89b34e.png" 
+                        alt="Sources Logo" 
+                        className="w-6 h-6 object-contain"
+                        onError={(e) => {
+                          console.log('Sources logo failed to load, falling back to Database icon');
+                          e.currentTarget.style.display = 'none';
+                          const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                          if (nextElement) {
+                            nextElement.style.display = 'block';
+                          }
+                        }}
+                      />
                     ) : feature.icon === "source-links-logo" ? (
                       <img 
                         src="/lovable-uploads/cbcd9c7e-27d8-4a1b-b7a7-bd8a4efdc1c6.png" 
@@ -108,6 +122,13 @@ const PlatformFeatures = () => {
                       />
                     ) : (
                       React.createElement(feature.icon, { size: 24, className: "text-[#2462AA]" })
+                    )}
+                    {feature.icon === "sources-logo" && (
+                      <Database 
+                        size={24} 
+                        className="text-[#2462AA]" 
+                        style={{ display: 'none' }}
+                      />
                     )}
                     {feature.icon === "source-links-logo" && (
                       <Link 
