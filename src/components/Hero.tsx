@@ -3,11 +3,16 @@ import { ArrowRight } from "lucide-react";
 const ReactorLogo = () => (
   <div className="flex items-center justify-center mb-8">
     <div className="flex items-center gap-4">
-      {/* Using the actual uploaded logo image */}
+      {/* Using one of the uploaded logo images */}
       <img 
-        src="/lovable-uploads/3c2b7c84-4fb4-4ed8-a1e8-a7d5e6f8c9d0.png" 
+        src="/lovable-uploads/dd574295-68a9-439a-8926-7f98c8b1c234.png" 
         alt="Reactor Logo" 
-        className="w-16 h-16"
+        className="w-16 h-16 object-contain"
+        onError={(e) => {
+          console.log('Logo failed to load:', e.currentTarget.src);
+          // Fallback to another uploaded image
+          e.currentTarget.src = "/lovable-uploads/4c8b5d92-5e6a-4f7b-9c3d-2a1b8e7f6d5c.png";
+        }}
       />
       <h2 className="text-2xl font-bold text-[#2C3E50] ml-2">REACTOR</h2>
     </div>
