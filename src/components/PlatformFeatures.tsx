@@ -1,4 +1,3 @@
-
 import React from "react";
 import { 
   Database, 
@@ -25,8 +24,8 @@ const PlatformFeatures = () => {
       description: "Use a library of 500+ connectors to ingest and integrate your data."
     },
     {
-      icon: Link,
-      title: "Source Linking",
+      icon: "source-links-logo", // Special identifier for source links logo
+      title: "Source Links",
       description: "Combine data from multiple sources into a unified structure for analysis."
     },
     {
@@ -91,6 +90,12 @@ const PlatformFeatures = () => {
                       <img 
                         src="/lovable-uploads/d483e6f4-63ea-4cef-a784-88543898b1d4.png" 
                         alt="Data Monitor Logo" 
+                        className="w-6 h-6 object-contain"
+                      />
+                    ) : feature.icon === "source-links-logo" ? (
+                      <img 
+                        src="/lovable-uploads/88603656-6c0e-4d6a-84c0-54b10dbdae04.png" 
+                        alt="Source Links Logo" 
                         className="w-6 h-6 object-contain"
                       />
                     ) : (
