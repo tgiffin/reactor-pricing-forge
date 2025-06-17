@@ -16,7 +16,8 @@ const PricingCards = () => {
       cta: "Get Started",
       ctaStyle: "bg-[#2462AA] hover:bg-[#1a4d88] text-white",
       popular: false,
-      isLink: false
+      isLink: true,
+      url: "https://reactordata.com/reactor-free-trial/"
     },
     {
       name: "Pro",

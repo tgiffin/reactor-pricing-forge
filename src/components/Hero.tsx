@@ -1,4 +1,5 @@
 
+
 import { ArrowRight } from "lucide-react";
 
 const ReactorLogo = () => (
@@ -37,9 +38,14 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="bg-[#2462AA] hover:bg-[#1a4d88] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2">
+          <a 
+            href="https://reactordata.com/reactor-free-trial/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-[#2462AA] hover:bg-[#1a4d88] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2"
+          >
             Get Started Free <ArrowRight size={20} />
-          </button>
+          </a>
           <a 
             href="https://reactordata.com/get-reactor/" 
             target="_blank" 
