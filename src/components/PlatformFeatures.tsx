@@ -94,7 +94,7 @@ const PlatformFeatures = () => {
                       />
                     ) : feature.icon === "sources-logo" ? (
                       <img 
-                        src="/lovable-uploads/5662352e-10f2-4576-a360-0823df89b34e.png" 
+                        src="/lovable-uploads/1efeca07-9a62-454f-9dfe-2d7d2d8dbe00.png" 
                         alt="Sources Logo" 
                         className="w-6 h-6 object-contain"
                         onError={(e) => {
