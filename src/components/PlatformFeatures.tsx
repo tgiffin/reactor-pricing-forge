@@ -18,9 +18,18 @@ const PlatformFeatures = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature) => (
+          {features.slice(0, 5).map((feature) => (
             <FeatureCard key={feature.title} feature={feature} />
           ))}
+          
+          {/* Empty slot for positioning */}
+          <div className="hidden lg:block"></div>
+          
+          {/* Destinations card in middle position */}
+          <FeatureCard key={features[5].title} feature={features[5]} />
+          
+          {/* Empty slot for positioning */}
+          <div className="hidden lg:block"></div>
         </div>
         
         <CallToActionSection />
