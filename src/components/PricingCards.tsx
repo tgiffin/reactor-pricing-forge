@@ -14,7 +14,7 @@ const PricingCards = () => {
         "Any supported Destination (S3, Databricks S3/Autoloader, Snowflake w/Snowpipe streaming, Big Query or GCS)"
       ],
       cta: "Get Started",
-      ctaStyle: "bg-blue-600 hover:bg-blue-700 text-white",
+      ctaStyle: "bg-[#2462AA] hover:bg-[#1a4d88] text-white",
       popular: false
     },
     {
@@ -43,7 +43,7 @@ const PricingCards = () => {
         "Custom SLAs, support, and scaling"
       ],
       cta: "Request Demo",
-      ctaStyle: "bg-purple-600 hover:bg-purple-700 text-white",
+      ctaStyle: "bg-[#E87B00] hover:bg-[#d16900] text-white",
       popular: false
     }
   ];
@@ -66,13 +66,13 @@ const PricingCards = () => {
               key={tier.name}
               className={`relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-8 border-2 ${
                 tier.popular 
-                  ? 'border-blue-500 ring-4 ring-blue-100' 
+                  ? 'border-[#2462AA] ring-4 ring-[#2462AA]/20' 
                   : 'border-slate-200 hover:border-slate-300'
               }`}
             >
               {tier.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-1">
+                  <div className="bg-[#2462AA] text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-1">
                     <Star size={16} fill="currentColor" />
                     Most Popular
                   </div>
@@ -108,7 +108,7 @@ const PricingCards = () => {
         <div className="text-center mt-12">
           <p className="text-slate-600">
             All plans include our comprehensive data integration platform. 
-            <span className="block mt-2">Need a custom solution? <a href="#" className="text-blue-600 hover:text-blue-700 font-semibold">Contact our sales team</a></span>
+            <span className="block mt-2">Need a custom solution? <a href="#" className="text-[#2462AA] hover:text-[#1a4d88] font-semibold">Contact our sales team</a></span>
           </p>
         </div>
       </div>

@@ -1,19 +1,33 @@
 
 import { ArrowRight } from "lucide-react";
 
+const ReactorLogo = () => (
+  <div className="flex items-center justify-center mb-8">
+    <div className="flex items-center gap-3">
+      {/* Reactor logo design with connected circles */}
+      <div className="relative flex items-center">
+        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+        <div className="w-1 h-0.5 bg-red-500 mx-1"></div>
+        <div className="w-6 h-6 bg-yellow-400 rounded-full border-4 border-yellow-400 relative">
+          <div className="absolute inset-1 bg-white rounded-full"></div>
+        </div>
+        <div className="w-1 h-0.5 bg-orange-500 mx-1"></div>
+        <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+      </div>
+      <h2 className="text-2xl font-bold text-slate-900 ml-4">REACTOR</h2>
+    </div>
+  </div>
+);
+
 const Hero = () => {
   return (
     <section className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50 py-20 px-4 lg:py-32">
       <div className="max-w-6xl mx-auto text-center">
-        {/* Logo placeholder - replace with actual Reactor logo */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-slate-800 mb-2">REACTOR DATA</h2>
-          <div className="w-16 h-1 bg-blue-600 mx-auto"></div>
-        </div>
+        <ReactorLogo />
         
         <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
           Simple, Transparent Pricing
-          <span className="block text-blue-600">Built to Scale With You</span>
+          <span className="block text-[#2462AA]">Built to Scale With You</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-slate-600 mb-12 max-w-4xl mx-auto leading-relaxed">
@@ -22,7 +36,7 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2">
+          <button className="bg-[#2462AA] hover:bg-[#1a4d88] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2">
             Get Started Free <ArrowRight size={20} />
           </button>
           <button className="border-2 border-slate-300 hover:border-slate-400 text-slate-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:bg-slate-50">
@@ -31,9 +45,9 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Decorative elements */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-50 blur-xl"></div>
-      <div className="absolute bottom-10 right-10 w-32 h-32 bg-purple-200 rounded-full opacity-30 blur-2xl"></div>
+      {/* Decorative elements using brand colors */}
+      <div className="absolute top-10 left-10 w-20 h-20 bg-[#FFCC00] opacity-20 rounded-full blur-xl"></div>
+      <div className="absolute bottom-10 right-10 w-32 h-32 bg-[#2462AA] opacity-20 rounded-full blur-2xl"></div>
     </section>
   );
 };
