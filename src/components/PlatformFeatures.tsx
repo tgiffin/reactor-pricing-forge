@@ -97,9 +97,21 @@ const PlatformFeatures = () => {
                         src="/lovable-uploads/88603656-6c0e-4d6a-84c0-54b10dbdae04.png" 
                         alt="Source Links Logo" 
                         className="w-6 h-6 object-contain"
+                        onError={(e) => {
+                          console.log('Source Links logo failed to load, falling back to Link icon');
+                          e.currentTarget.style.display = 'none';
+                          e.currentTarget.nextSibling.style.display = 'block';
+                        }}
                       />
                     ) : (
                       React.createElement(feature.icon, { size: 24, className: "text-[#2462AA]" })
+                    )}
+                    {feature.icon === "source-links-logo" && (
+                      <Link 
+                        size={24} 
+                        className="text-[#2462AA]" 
+                        style={{ display: 'none' }}
+                      />
                     )}
                   </div>
                   <h3 className="text-xl font-semibold text-slate-900">{feature.title}</h3>
