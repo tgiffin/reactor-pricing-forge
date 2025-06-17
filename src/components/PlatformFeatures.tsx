@@ -1,4 +1,3 @@
-
 import React from "react";
 import { 
   Database, 
@@ -50,7 +49,7 @@ const PlatformFeatures = () => {
       description: "Build and maintain reusable, consistent data models for business clarity and governance."
     },
     {
-      icon: RotateCcw,
+      icon: "mapper-replay-logo", // Special identifier for mapper replay logo
       title: "Mapper Replay",
       description: "Retransform source data using updated mappings without reingesting raw data."
     },
@@ -177,6 +176,20 @@ const PlatformFeatures = () => {
                           }
                         }}
                       />
+                    ) : feature.icon === "mapper-replay-logo" ? (
+                      <img 
+                        src="/lovable-uploads/76d76145-d775-4e09-b028-6b4d4d753884.png" 
+                        alt="Mapper Replay Logo" 
+                        className="w-6 h-6 object-contain"
+                        onError={(e) => {
+                          console.log('Mapper Replay logo failed to load, falling back to RotateCcw icon');
+                          e.currentTarget.style.display = 'none';
+                          const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                          if (nextElement) {
+                            nextElement.style.display = 'block';
+                          }
+                        }}
+                      />
                     ) : feature.icon === "destinations-logo" ? (
                       <img 
                         src="/lovable-uploads/b061c278-08d2-476d-a88b-790cc9a6588f.png" 
@@ -231,6 +244,13 @@ const PlatformFeatures = () => {
                     )}
                     {feature.icon === "semantic-layer-logo" && (
                       <Layers 
+                        size={24} 
+                        className="text-[#2462AA]" 
+                        style={{ display: 'none' }}
+                      />
+                    )}
+                    {feature.icon === "mapper-replay-logo" && (
+                      <RotateCcw 
                         size={24} 
                         className="text-[#2462AA]" 
                         style={{ display: 'none' }}
