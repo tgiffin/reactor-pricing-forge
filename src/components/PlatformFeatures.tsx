@@ -60,7 +60,7 @@ const PlatformFeatures = () => {
       description: "Build, test, and validate mapping changes in an isolated environment before deployment."
     },
     {
-      icon: Target,
+      icon: "destinations-logo", // Special identifier for destinations logo
       title: "Destinations",
       description: "Output data to Snowflake, BigQuery, Databricks, S3, and Google Cloud Storage."
     }
@@ -163,6 +163,20 @@ const PlatformFeatures = () => {
                           }
                         }}
                       />
+                    ) : feature.icon === "destinations-logo" ? (
+                      <img 
+                        src="/lovable-uploads/b061c278-08d2-476d-a88b-790cc9a6588f.png" 
+                        alt="Destinations Logo" 
+                        className="w-6 h-6 object-contain"
+                        onError={(e) => {
+                          console.log('Destinations logo failed to load, falling back to Target icon');
+                          e.currentTarget.style.display = 'none';
+                          const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                          if (nextElement) {
+                            nextElement.style.display = 'block';
+                          }
+                        }}
+                      />
                     ) : (
                       React.createElement(feature.icon, { size: 24, className: "text-[#2462AA]" })
                     )}
@@ -196,6 +210,13 @@ const PlatformFeatures = () => {
                     )}
                     {feature.icon === "expression-library-logo" && (
                       <Code 
+                        size={24} 
+                        className="text-[#2462AA]" 
+                        style={{ display: 'none' }}
+                      />
+                    )}
+                    {feature.icon === "destinations-logo" && (
+                      <Target 
                         size={24} 
                         className="text-[#2462AA]" 
                         style={{ display: 'none' }}
