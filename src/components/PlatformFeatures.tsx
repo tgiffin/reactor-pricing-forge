@@ -1,3 +1,4 @@
+
 import React from "react";
 import { 
   Database, 
@@ -39,7 +40,7 @@ const PlatformFeatures = () => {
       description: "Configure and control how your data is transformed and routed to destinations."
     },
     {
-      icon: Code,
+      icon: "expression-library-logo", // Special identifier for expression library logo
       title: "Mapping Expression Library",
       description: "Includes functions and helpers for logic, math, structure, text, dates, and statistics."
     },
@@ -134,6 +135,20 @@ const PlatformFeatures = () => {
                           }
                         }}
                       />
+                    ) : feature.icon === "expression-library-logo" ? (
+                      <img 
+                        src="/lovable-uploads/2a187721-a4cd-4642-bc81-1ce8a8610a5b.png" 
+                        alt="Expression Library Logo" 
+                        className="w-6 h-6 object-contain"
+                        onError={(e) => {
+                          console.log('Expression Library logo failed to load, falling back to Code icon');
+                          e.currentTarget.style.display = 'none';
+                          const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                          if (nextElement) {
+                            nextElement.style.display = 'block';
+                          }
+                        }}
+                      />
                     ) : (
                       React.createElement(feature.icon, { size: 24, className: "text-[#2462AA]" })
                     )}
@@ -153,6 +168,13 @@ const PlatformFeatures = () => {
                     )}
                     {feature.icon === "mappings-logo" && (
                       <Settings 
+                        size={24} 
+                        className="text-[#2462AA]" 
+                        style={{ display: 'none' }}
+                      />
+                    )}
+                    {feature.icon === "expression-library-logo" && (
+                      <Code 
                         size={24} 
                         className="text-[#2462AA]" 
                         style={{ display: 'none' }}
